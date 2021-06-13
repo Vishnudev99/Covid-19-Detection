@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>X-ray Detection of covid-19 and  Pneumonia</title>
+	<meta name = "viewport" content="width=device-width, initial-scale=1'">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<!--NAVIGATION--->
+	<div class="w3-bar w3-black">
+ 	  <span class="branding w3-bar-item w3-mobile">Covid and Pnemonia X-ray detection</span>
+ 	  <span class="w3-right w3-mobile"> 
+	      <a href="#" class="w3-bar-item w3-button w3-mobile w3-hover-red">Home</a>
+	      <a href="#about" class="w3-bar-item w3-button w3-mobile w3-hover-red">About</a>	      
+	      <a href="#contact" class="w3-bar-item w3-button w3-mobile w3-hover-red">Contact</a>
+      </span>
+	</div>
+
+	<!--SHOWCASE-->
+    <section class="showcase">
+    	<div class="w3-container w3-center">
+    		<h1>Disease Detection</h1>
+    		<hr>
+    		<p>I think that at the end of the day, wearing masks, washing your hands, and keeping your distance is still the name of the game right now.It is also equally important for us to detect and diagnose Covid-19 and other respiratory diseases.</p>
+    		
+    		<form method="POST" action="/Covid-19" enctype="multipart/form-data">
+             <p><input type="file" class="w3-button w3-red w3-large " name="file"></p>
+             <p><input type="submit" value="Covid-19 Test"></p>
+            </form>
+    		
+    		<form method="POST" action="/Pneumonia" enctype="multipart/form-data">
+      			<p><input type="file" class="w3-button w3-red w3-large " name="file"></p>
+      			<button type="submit">Pneumonia Test</button>
+            </form>
+            <a href="https://www.cowin.gov.in/home" target="_blank"><div class="w3-container w3-right-align"><button class="w3-button w3-red w3-large">Register for covid vaccines here</button></div></a>
+            		
+    </section>	
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="w3-container">
+        <div class="w3-row-padding">
+          <div class="w3-col m5">
+            <img src="../static/img/about.jpg">
+          </div>
+          <div class="w3-col m7">
+            
+
+            <div id="what" class="w3-container w3-show">
+              <h3>We Do It All</h3>
+              <p>We are students of Muthoot Institute of technology and Science.We have created this website as part of the final year project</p>
+            </div>
+
+            
+
+ 
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- CONTACT HEADING -->
+    <section id="contact" class="section w3-dark-grey w3-hover-opacity">
+      <div class="w3-container w3-center">
+        <h1 class="w3-text-shadow">GET IN TOUCH</h1>
+        <p>for any queries feel free to contact us.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section">
+      <div class="w3-container">
+        <div class="w3-card-4">
+          <div class="w3-container w3-dark-grey">
+            <h2>Contact Us</h2>
+          </div>
+            <form class="w3-container w3-padding-xlarge">
+            <label class="w3-label">Name</label>
+            <input class="w3-input" type="text">
+            <label class="w3-label">Email</label>
+            <input class="w3-input" type="text">
+            <label class="w3-input">Message</label>
+            <textarea class="w3-input w3-border" style="resize:none"></textarea>
+            <br>
+            <button type="submit" class="w3-button">Submit</button>
+            <br><br>
+            </form>
+          </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="w3-black w3-padding-xlarge w3-center">
+      <p> Detection of Covid-19 and Pneumonia &copy; 2021</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="start-modal" class="w3-modal">
+      <div class="w3-modal-content">
+        <header class="w3-container w3-red">
+          <span onclick="document.getElementById('start-modal').style.display='none'" class="w3-closebtn">&times;</span>
+          <h2>Get Started</h2>
+        </header>
+
+        <div class="w3-container">
+          <form>
+            <div class="w3-section">
+              <label>Name</label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Name">
+              <label>Username</label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username">
+              <label>Password</label>
+              <input class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password">
+              <label>Confirm Password</label>
+              <input class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password">
+              <button class="w3-black w3-btn-block w3-section w3-padding">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function accFunction(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf("w3-show") == -1) {
+              x.className += " w3-show";
+          } else {
+              x.className = x.className.replace(" w3-show", "");
+          }
+      }
+      var $tickerWrapper = $(".tickerwrapper");
+	  var $list = $tickerWrapper.find("ul.list");
+	  var $clonedList = $list.clone();
+	  var listWidth = 10;
+
+		$list.find("li").each(function (i) {
+					listWidth += $(this, i).outerWidth(true);
+		});
+
+		var endPos = $tickerWrapper.width() - listWidth;
+
+		$list.add($clonedList).css({
+			"width" : listWidth + "px"
+		});
+
+		$clonedList.addClass("cloned").appendTo($tickerWrapper);
+
+		//TimelineMax
+		var infinite = new TimelineMax({repeat: -1, paused: true});
+		var time = 40;
+
+		infinite
+		  .fromTo($list, time, {rotation:0.01,x:0}, {force3D:true, x: -listWidth, ease: Linear.easeNone}, 0)
+		  .fromTo($clonedList, time, {rotation:0.01, x:listWidth}, {force3D:true, x:0, ease: Linear.easeNone}, 0)
+		  .set($list, {force3D:true, rotation:0.01, x: listWidth})
+		  .to($clonedList, time, {force3D:true, rotation:0.01, x: -listWidth, ease: Linear.easeNone}, time)
+		  .to($list, time, {force3D:true, rotation:0.01, x: 0, ease: Linear.easeNone}, time)
+		  .progress(1).progress(0)
+		  .play();
+
+		//Pause/Play		
+		$tickerWrapper.on("mouseenter", function(){
+			infinite.pause();
+		}).on("mouseleave", function(){
+			infinite.play();
+		});
+      </script>
+  </body>
+
+</html>
